@@ -1,7 +1,8 @@
 <template>
-  <!--首页 Header-->
+  <!--首页 Header => All Header-->
   <div class="HomePageHeader">
-    <span class="TextTitle">首页</span>
+    <span class="TextTitle">{{title.text1}}</span>
+    <span class="TextTitleMin">&nbsp{{title.text2}}</span>
     <div class="Avatar"></div>
     <div class="Input">
       <img src="../../assets/common/img/sousuo.png" alt="">
@@ -11,7 +12,8 @@
 </template>
 <script>
 export default {
-  name: 'DetailedHeader'
+  name: 'DetailedHeader',
+  props:['title']
 }
 </script>
 <style  lang="stylus">
@@ -25,6 +27,12 @@ export default {
         font-size 36px
         float left
         margin-left 74px
+      .TextTitleMin
+        color #333333
+        font-size 20px
+        float left
+        margin-top 6px
+        font-weight normal
       .Avatar
         width 40px
         height 40px

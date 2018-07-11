@@ -1,15 +1,6 @@
 <template>
     <div class="HomePageWrap">
-      <!--&lt;!&ndash;首页 Header&ndash;&gt;-->
-      <!--<div class="HomePageHeader">-->
-          <!--<span class="TextTitle">首页</span>-->
-          <!--<div class="Avatar"></div>-->
-          <!--<div class="Input">-->
-            <!--<img src="../assets/common/img/sousuo.png" alt="">-->
-            <!--<input type="text" placeholder="请输入搜索内容">-->
-          <!--</div>-->
-      <!--</div>-->
-      <DetailedHeader></DetailedHeader>
+      <DetailedHeader :title='title'></DetailedHeader>
       <!--首页 Main-->
       <div class="HomePageMain">
         <!--Details 细节内容-->
@@ -133,12 +124,17 @@
 <script>
 import DetailedHeader from '../components/DetailedHeader/DetailedHeader'
 export default {
-  name: 'Fir',
+  name: 'HomePageWrap',
   components: {
     DetailedHeader
   },
   data () {
-
+    return {
+      //DetailedHeader 样式组件传值
+      title: {
+        text1:'首页',
+      }
+    }
   }
 }
 </script>
@@ -147,50 +143,6 @@ export default {
 .HomePageWrap
   width 100%
   background #F1F2F5
-  .HomePageHeader
-    height 100px
-    overflow hidden
-    background #ffffff
-    line-height 100px
-    .TextTitle
-      color #333333
-      font-size 36px
-      float left
-      margin-left 74px
-    .Avatar
-      width 40px
-      height 40px
-      float right
-      margin-right 100px
-      background #C81623
-      margin-top 30px
-      border-radius 50%
-      overflow hidden
-    .Input
-      width 370px
-      height 46px
-      float right
-      margin-right 41px
-      margin-top 27px
-      position relative
-      img
-        position absolute
-        top 10px
-        left 104px
-        z-index 3
-        cursor pointer
-      input
-        width 370px
-        height 46px
-        border-radius 23px
-        background #F4F6F8
-        position absolute
-        top 0
-        left 0
-        font-size 18px
-        color rgba(192,192,192,1)
-        padding-left 159px
-        box-sizing border-box
   .HomePageMain
     width 100%
     padding 50px 85px 90px 72px
@@ -205,7 +157,7 @@ export default {
         height:240px;
         background:rgba(255,255,255,1);
         border-radius:5px;
-        box-shadow:7px 0px 35px rgba(237,237,240,0.58)
+        box-shadow:7px 0 35px rgba(237,237,240,0.58)
         color #000000
         p
           text-align left
@@ -244,8 +196,6 @@ export default {
         transform translate(-50%,-50%)
         border 1px solid #FF6E4B
         box-shadow 10px 0 #FF6E4B inset
-
-
     .HomePageTransaction
       margin-top 43px
       .MeTransaction

@@ -3,14 +3,14 @@ import Router from 'vue-router'
 
 import HomePage from '../page/HomePage'
 import MyAssets from '../page/MyAssets'
-import Tir from '../page/Tir'
-import For from '../page/For'
-import Fiv from '../page/Fiv'
-import Six from '../page/Six'
-import Sev from '../page/Sev'
-import Eig from '../page/Eig'
-import Nin from '../page/Nin'
-import Ten from '../page/Ten'
+import PersonalCenter from '../page/PersonalCenter'
+import ApplicationCenter from '../page/ApplicationCenter'
+import BlockProduction from '../page/BlockProduction'
+import AssetEvaluation from '../page/AssetEvaluation'
+import BlockBrowse from '../page/BlockBrowse'
+import Vote from '../page/Vote'
+import TransferAccounts from '../page/TransferAccounts'
+import Node from '../page/Node'
 // 按需加载
 const Login = () => import('../page/Login/Login')
 const Detailed = () => import('../page/Detailed/Detailed')
@@ -27,44 +27,54 @@ export default new Router({
       component: Detailed,
       children: [
         {
+          //首页
           path: '/HomePage',
           component: HomePage
         },
         {
+          //我的资产
           path: '/MyAssets',
           component: MyAssets
         },
         {
-          path: '/Tir',
-          component: Tir
+          //个人中心
+          path: '/PersonalCenter',
+          component: PersonalCenter
         },
         {
-          path: '/For',
-          component: For
+          //应用中心
+          path: '/ApplicationCenter',
+          component: ApplicationCenter
         },
         {
-          path: '/Fiv',
-          component: Fiv
+          //资产评估
+          path: '/AssetEvaluation',
+          component: AssetEvaluation
         },
         {
-          path: '/Six',
-          component: Six
+          //区块生产
+          path: '/BlockProduction',
+          component: BlockProduction
         },
         {
-          path: '/Sev',
-          component: Sev
+          //区块浏览
+          path: '/BlockBrowse',
+          component: BlockBrowse
         },
         {
-          path: '/Eig',
-          component: Eig
+          //投票
+          path: '/Vote',
+          component: Vote
         },
         {
-          path: '/Nin',
-          component: Nin
+          //转帐
+          path: '/TransferAccounts',
+          component: TransferAccounts
         },
         {
-          path: '/Ten',
-          component: Ten
+          //节点
+          path: '/Node',
+          component: Node
         }
       ]
     }

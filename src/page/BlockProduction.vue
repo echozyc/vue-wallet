@@ -1,21 +1,21 @@
 <template>
-    <div class="MyAssetsWrap">
-      <DetailedHeader :title='title'></DetailedHeader>
-    </div>
+  <div class="BlockProductionWrap">
+    <DetailedHeader :title='title'></DetailedHeader>
+  </div>
 </template>
 
 <script>
 import DetailedHeader from '../components/DetailedHeader/DetailedHeader'
 export default {
-  name: "MyAssetsWrap",
+  name: "BlockProduction",
   components:{
     DetailedHeader
   },
   data () {
     return {
       title: {
-        text1: '我的资产',
-        text2: '/ 资产概要'
+        text1: '区块生产',
+        text2: ''
       }
     }
   }

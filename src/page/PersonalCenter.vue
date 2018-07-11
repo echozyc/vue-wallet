@@ -1,21 +1,21 @@
 <template>
-    <div class="MyAssetsWrap">
-      <DetailedHeader :title='title'></DetailedHeader>
-    </div>
+  <div class="PersonalCenterWrap">
+    <DetailedHeader :title='title'></DetailedHeader>
+  </div>
 </template>
 
 <script>
 import DetailedHeader from '../components/DetailedHeader/DetailedHeader'
 export default {
-  name: "MyAssetsWrap",
+  name: "PersonalCenter",
   components:{
     DetailedHeader
   },
   data () {
     return {
       title: {
-        text1: '我的资产',
-        text2: '/ 资产概要'
+        text1: '个人中心',
+        text2: '/ 账户信息'
       }
     }
   }
