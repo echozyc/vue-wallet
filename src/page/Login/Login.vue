@@ -299,7 +299,7 @@ export default {
       background -webkit-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
       background -moz-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
       background -o-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background linear-gradient(to bottom,#3D7EFC 0,#0A5EFF 100%);
+      background linear-gradient(to bottom,#3D7EFC 0,#0A5EFF 100%)
       span
         font-size 24px
         color #ffffff

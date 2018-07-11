@@ -9,6 +9,7 @@ import DetailedHeader from '../components/DetailedHeader/DetailedHeader'
 export default {
   name: "ApplicationCenter",
   components:{
+    //头部组件
     DetailedHeader
   },
   data () {

@@ -9,13 +9,13 @@ import DetailedHeader from '../components/DetailedHeader/DetailedHeader'
 export default {
   name: "TransferAccounts",
   components:{
+    //头部组件
     DetailedHeader
   },
   data () {
     return {
       title: {
         text1: '转账',
-        text2: ''
       }
     }
   }

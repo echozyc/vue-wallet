@@ -9,13 +9,13 @@ import DetailedHeader from '../components/DetailedHeader/DetailedHeader'
 export default {
   name: "BlockProduction",
   components:{
+    //头部组件
     DetailedHeader
   },
   data () {
     return {
       title: {
-        text1: '区块生产',
-        text2: ''
+        text1: '区块生产'
       }
     }
   }

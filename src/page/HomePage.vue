@@ -1,5 +1,6 @@
 <template>
     <div class="HomePageWrap">
+      <!--首页 Header组件-->
       <DetailedHeader :title='title'></DetailedHeader>
       <!--首页 Main-->
       <div class="HomePageMain">
@@ -26,96 +27,8 @@
           <div class="MeTransaction">
             <span>我的交易</span>
           </div>
-          <table border="0" width="100%" cellpadding="0">
-            <tr>
-              <td>ID</td>
-              <td>类型</td>
-              <td>发送者</td>
-              <td>接受者</td>
-              <td>日期</td>
-              <td>金额(费用)</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-            <tr class="HomePageContent">
-              <td>123456</td>
-              <td>ACE</td>
-              <td>stan</td>
-              <td>sendi</td>
-              <td>2017-02-09</td>
-              <td>5000</td>
-            </tr>
-          </table>
+          <!--table表格 组件-->
+          <DetailedTable :tableTitle="tableTitle"></DetailedTable>
         </div>
       </div>
     </div>
@@ -123,16 +36,31 @@
 
 <script>
 import DetailedHeader from '../components/DetailedHeader/DetailedHeader'
+import DetailedTable from '../components/DetailedTable/DetailedTable'
 export default {
   name: 'HomePageWrap',
   components: {
-    DetailedHeader
+    //头部组件
+    DetailedHeader,
+    //table表格组件
+    DetailedTable
   },
   data () {
     return {
       //DetailedHeader 样式组件传值
       title: {
-        text1:'首页',
+        text1:'首页'
+      },
+      // DetailedTable 组件传值（传递名称）
+      tableTitle: {
+        //最多7个，最少6个，最后一个没有即为空
+        text1:'ID',
+        text2:'类型',
+        text3:'发送者',
+        text4:'接受者',
+        text5:'日期',
+        text6:'金额(费用)',
+        text7:'',
       }
     }
   }
@@ -142,7 +70,6 @@ export default {
 <style scoped lang="stylus">
 .HomePageWrap
   width 100%
-  background #F1F2F5
   .HomePageMain
     width 100%
     padding 50px 85px 90px 72px
@@ -228,7 +155,4 @@ export default {
           color #666666
           &:hover
             box-shadow 0 0 16px #EDEEEF inset
-
-
-
 </style>
