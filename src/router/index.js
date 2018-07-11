@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Fir from '../page/Fir'
-import Sec from '../page/Sec'
+import HomePage from '../page/HomePage'
+import MyAssets from '../page/MyAssets'
 import Tir from '../page/Tir'
 import For from '../page/For'
 import Fiv from '../page/Fiv'
@@ -27,12 +27,12 @@ export default new Router({
       component: Detailed,
       children: [
         {
-          path: '/Fir',
-          component: Fir
+          path: '/HomePage',
+          component: HomePage
         },
         {
-          path: '/Sec',
-          component: Sec
+          path: '/MyAssets',
+          component: MyAssets
         },
         {
           path: '/Tir',

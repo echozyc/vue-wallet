@@ -2,17 +2,17 @@
   <el-aside class="public-nav">
     <div class="public-nav-logo"><img src="../../assets/common/img/LOGO@2x.png" alt=""></div>
     <ul>
-      <li @click="goto('/Fir')" :class="{on:isCurrent('/Fir')}">
+      <li @click="goto('/HomePage')" :class="{on:isCurrent('/HomePage')}">
         <div class="frame-style"></div>
         <img class="img-xuanzhong" src="../../assets/common/img/icon_shouye_xuanzhong@2x.png" alt="">
         <img class="img-weixuanzhong" src="../../assets/common/img/icon_shouye_weixuanzhong@2x.png" alt="">
         <span>首页</span>
       </li>
-      <li @click="goto('/Sec')" :class="{on:isCurrent('/Sec')}">
+      <li @click="goto('/MyAssets')" :class="{on:isCurrent('/MyAssets')}">
         <div class="frame-style"></div>
         <img class="img-xuanzhong" src="../../assets/common/img/icon_zichan_xuanzhong@2x.png" alt="">
         <img class="img-weixuanzhong" src="../../assets/common/img/icon_zichan_weixuanzhong@2x.png" alt="">
-        <span>资产</span>
+        <span>我的资产</span>
       </li>
       <li @click="goto('/Tir')" :class="{on:isCurrent('/Tir')}">
         <div class="frame-style"></div>

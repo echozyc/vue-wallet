@@ -1,14 +1,15 @@
 <template>
     <div class="HomePageWrap">
-      <!--首页 Header-->
-      <div class="HomePageHeader">
-          <span class="TextTitle">首页</span>
-          <div class="Avatar"></div>
-          <div class="Input">
-            <img src="../assets/common/img/sousuo.png" alt="">
-            <input type="text" placeholder="请输入搜索内容">
-          </div>
-      </div>
+      <!--&lt;!&ndash;首页 Header&ndash;&gt;-->
+      <!--<div class="HomePageHeader">-->
+          <!--<span class="TextTitle">首页</span>-->
+          <!--<div class="Avatar"></div>-->
+          <!--<div class="Input">-->
+            <!--<img src="../assets/common/img/sousuo.png" alt="">-->
+            <!--<input type="text" placeholder="请输入搜索内容">-->
+          <!--</div>-->
+      <!--</div>-->
+      <DetailedHeader></DetailedHeader>
       <!--首页 Main-->
       <div class="HomePageMain">
         <!--Details 细节内容-->
@@ -130,8 +131,15 @@
 </template>
 
 <script>
+import DetailedHeader from '../components/DetailedHeader/DetailedHeader'
 export default {
-  name: 'Fir'
+  name: 'Fir',
+  components: {
+    DetailedHeader
+  },
+  data () {
+
+  }
 }
 </script>
 
