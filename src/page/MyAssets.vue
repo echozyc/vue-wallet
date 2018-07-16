@@ -6,33 +6,125 @@
       <div class="MyAssetsMain">
         <!--导航 nav-->
         <div class="MyAssetsContentNav">
-          <div class="zichangaiyao"  @click="show('isShowAssetSummary')">
+          <div class="zichangaiyao"  @click="show('isShowAssetSummary')" :class="{on:active == 'isShowAssetSummary'}">
             <span>资产概要</span>
           </div>
-          <div class="zhucefaxing"  @click="show('isShowRegisteredIssue')">
+          <div class="zhucefaxing"  @click="show('isShowRegisteredIssue')" :class="{on:active == 'isShowRegisteredIssue'}">
             <span>注册发行商</span>
           </div>
-          <div class="faxingzhanghu" @click="show('isShowIssueAssets')">
+          <div class="faxingzhanghu" @click="show('isShowIssueAssets')" :class="{on:active == 'isShowIssueAssets'}">
             <span>发行资产</span>
           </div>
-          <div class="faxingzichan"  @click="show('isShowMeIssueAssets')">
+          <div class="faxingzichan"  @click="show('isShowMeIssueAssets')" :class="{on:active == 'isShowMeIssueAssets'}">
             <span>我发行的资产</span>
           </div>
         </div>
+
         <div class="ContentWrap">
+
           <!--资产概要-->
           <div class="AssetSummary" v-show="active == 'isShowAssetSummary'">
             <!--table表格 组件-->
             <DetailedTable :tableTitle="tableTitle"></DetailedTable>
           </div>
+
           <!--注册发行商-->
           <div class="RegisteredIssue" v-show="active == 'isShowRegisteredIssue'">
-            <p style="color: #000;">注册发行商</p>
+            <div class="content">
+              <ul class="lists">
+                <li class="list">
+                    <span class="title">
+                        发行商名称*
+                    </span>
+                  <input class="text" type="text" >
+                </li>
+                <li class="list">
+                    <span class="title">
+                        企业三证号
+                    </span>
+                  <input class="text" type="text" >
+                </li>
+                <li class="list">
+                    <span class="title">
+                        地址*
+                    </span>
+                  <input class="text" type="text" >
+                </li>
+                <li class="list">
+                    <span class="title">
+                        联系人*
+                    </span>
+                  <input class="text" type="text" >
+                </li>
+                <li class="list">
+                    <span class="title">
+                        联系方式*
+                    </span>
+                  <input class="text" type="text" >
+                </li>
+              </ul>
+              <p class="notice">
+                备注：固定合约需要申请成发行商才能有发行token的资格。注意填写后不能修改。
+              </p>
+              <a href="javascript:;" class="btn" style="margin-left: 196px" @click="open2">提交</a>
+            </div>
           </div>
+
           <!--发行资产-->
           <div class="IssueAssets" v-show="active == 'isShowIssueAssets'">
-            <p style="color: #000;">发行资产</p>
+            <div class="content">
+              <ul class="lists" style="padding-top: 121px">
+                <span class="listsTitle"><div class="point"></div>发行代币信息</span>
+                <li class="list" >
+                   <span class="title">
+                       资产名称
+                   </span>
+                  <input class="text" type="text" placeholder="英文名称">
+                </li>
+                <li class="list">
+                    <span class="title">
+                        代币标识
+                    </span>
+                  <input class="text" type="text" placeholder="英文名称">
+                </li>
+                <li class="list">
+                    <span class="title">
+                        小数/位数精确度
+                    </span>
+                  <input class="text" type="text" placeholder="请输入2-6位整数">
+                </li>
+                <li class="list">
+                    <span class="title">
+                        发行量
+                    </span>
+                  <input class="text" type="text" placeholder="不超过12位正整数">
+                </li>
+                <li class="list">
+                    <span class="title" style="float: left; margin-top: 82px" >
+                        代币资产描述
+                    </span>
+                  <textarea class="text" type="text" placeholder="不超过500个字符" style="height: 178px;outline: none;padding-top: 22px"></textarea>
+                </li>
+                <li class="list" style="width:760px; height: 60px">
+
+                </li>
+                <li class="list">
+                    <span class="title">
+                        冻结数
+                    </span>
+                  <input class="text" type="text" >
+                </li>
+                <li class="list">
+                    <span class="title">
+                        冻结释放时间
+                    </span>
+                  <input class="text" type="text" placeholder="格式：2018-07-08 12:23:30">
+                </li>
+              </ul>
+              <a href="javascript:;" class="btn" style="margin-left: 241px">提交</a>
+            </div>
           </div>
+
           <!--我发行的资产-->
           <div class="MeIssueAssets" v-show="active == 'isShowMeIssueAssets'">
             <!--table表格 组件-->
@@ -52,7 +144,7 @@ export default {
     //头部组件
     DetailedHeader,
     //table表格组件
-    DetailedTable
+    DetailedTable,
   },
   data () {
     return {
@@ -69,33 +161,60 @@ export default {
         text3:'余额',
         text4:'精度',
         text5:'发行总量',
-        text6:'金额(费用)',
-        text7:'操作',
+        text6:'操作',
       },
       //nav 切换
       active: 'isShowAssetSummary',
-      isShowAssetSummary: true,
-      isShowRegisteredIssue: false,
-      isShowIssueAssets:false,
-      isShowMeIssueAssets:false
+      // isShowAssetSummary: true,
+      // isShowRegisteredIssue: false,
+      // isShowIssueAssets:false,
+      // isShowMeIssueAssets:false
     }
   },
   methods:{
     show(i){
       this.active = i
+    },
+    open2() {
+      this.$confirm('申请成为发行商需要**个AEC', {
+        confirmButtonText: '确定提交',
+        cancelButtonText: '取消',
+        center: true
+      }).then(() => {
+        this.$message({
+        });
+      }).catch(() => {
+        this.$message({
+        });
+      });
     }
   }
 }
 </script>
 
 <style lang="stylus">
+  $bg-color = #f2f6ff
+  $bg-input = #FAFAFA
+  $border-color = #EBEBEB
+  $text-color = #666666
+  $text-actice = #3679FC
+  $text-notice = #3679FC
+  $notice-size = 16px
+  $font-size = 16px
+  $btn-size = 24px
+  $white = #ffffff
+  $blue = #3679FC
+  gradient($a,$b) { //渐变
+      background: linear-gradient(to left, $a, $b)
+      background:-moz-linear-gradient(to left , $a, $b)
+      background:-o-linear-gradient(to left , $a, $b)
+      background: -webkit-gradient(linear,left top,right top,from($a),to($b))
+    }
+
 .MyAssetsWrap
   width 100%
-  height 500px
-  background red
   .MyAssetsMain
     width 100%
-    height 500px
     padding 50px 85px 90px 72px
     background #F2F6FF
     box-sizing border-box
@@ -105,6 +224,7 @@ export default {
       background #ffffff
       padding-left 20px
       box-sizing border-box
+      min-width 975px
       div
         float left
         height 48px
@@ -125,6 +245,94 @@ export default {
         background linear-gradient(to bottom,#3D7EFC 0,#0A5EFF 100%)
         span
           color #ffffff
+    .ContentWrap
+      border-top 1px solid #F0F0F0
+      >div
+        min-width 975px
+        .content
+          background #fff
+          width 100%
+          /*height 100%*/
+          .lists
+            padding-top 77px
+            position relative
+            .listsTitle
+              font-size 20px
+              color #333333
+              position absolute
+              top 50px
+              left 92px
+              .point
+                width: 7px;
+                height: 7px;
+                -webkit-transform-origin: 0 100%;
+                -moz-transform-origin: 0 100%;
+                -o-transform-origin: 0 100%;
+                -ms-transform-origin: 0 100%;
+                transform-origin: 0 100%;
+                -webkit-transform:rotate(-45deg);
+                -moz-transform:rotate(-45deg);
+                -o-transform:rotate(-45deg);
+                -ms-transform:rotate(-45deg);
+                transform:rotate(-45deg);
+                background: #3679FC;
+                position absolute
+                top 6px
+                left -12px
 
+            .list
+              margin-left 74px
+              margin-bottom 30px
+              .title
+                display inline-block
+                color $text-color
+                font-size $font-size
+                text-align right
+              .text
+                display inline-block
+                margin-left 30px
+                padding 0 30px
+                width: 646px
+                height: 60px
+                font-size $font-size
+                border-radius 5px
+                background $bg-input
+                border 1px solid $border-color
+                &::-webkit-input-placeholder /* WebKit browsers */
+                  color #B7B8B8
+                &:-moz-placeholder /* Mozilla Firefox 4 to 18 */
+                  color #B7B8B8
+                &::-moz-placeholder /* Mozilla Firefox 19+ */
+                  color #B7B8B8
+                &:-ms-input-placeholder /* Internet Explorer 10+ */
+                  color #B7B8B8
+          .notice
+            margin-left 196px
+            font-size $notice-size
+            color $text-notice
+          .btn
+            display inline-block
+            margin: 53px 0 103px 180px
+            width: 704px
+            height: 62px
+            font-size $btn-size
+            color #fff
+            line-height 62px
+            text-align center
+            border-radius 5px
+            gradient(#0A5EFF,#3D7EFC)
+     .RegisteredIssue
+       .content
+         .lists
+           .title
+             width 88px
+     .IssueAssets
+       .content
+         .lists
+           .title
+             width 135px
 
+  .el-message-box--center
+    .el-message-box__header
+      display none  !important
 </style>

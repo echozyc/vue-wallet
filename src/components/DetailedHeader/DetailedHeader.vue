@@ -3,7 +3,9 @@
   <div class="HomePageHeader">
     <span class="TextTitle">{{title.text1}}</span>
     <span class="TextTitleMin">&nbsp{{title.text2}}</span>
-    <div class="Avatar"></div>
+    <div class="Avatar">
+      <img src="../../assets/common/img/touxiang_small@2x.png" alt="">
+    </div>
     <div class="Input">
       <img src="../../assets/common/img/sousuo.png" alt="">
       <input type="text" placeholder="请输入搜索内容">
@@ -38,10 +40,12 @@ export default {
         height 40px
         float right
         margin-right 100px
-        background #C81623
         margin-top 30px
-        border-radius 50%
         overflow hidden
+        img
+          width 40px
+          height 40px
+          float left
       .Input
         width 370px
         height 46px

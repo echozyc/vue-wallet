@@ -19,12 +19,12 @@ export default {
 </script>
 <style lang="stylus">
   .ap
-    font-family 'Avenir', Helvetica, Arial, sans-serif
-    -webkit-font-smoothing antialiased
-    -moz-osx-font-smoothing grayscale
-    text-align center
-    color #ffffff
-    font-weight bold
+    /*font-family 'Avenir', Helvetica, Arial, sans-serif*/
+    /*-webkit-font-smoothing antialiased*/
+    /*-moz-osx-font-smoothing grayscale*/
+    /*text-align center*/
+    /*color #ffffff*/
+    /*font-weight bold*/
     height 100%
     width 100%
     .el-container

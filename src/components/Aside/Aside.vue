@@ -79,6 +79,13 @@ export default {
 }
 </script>
 <style lang="stylus">
+  gradient($a,$b) { //渐变
+    background: linear-gradient(to left, $a, $b)
+    background:-moz-linear-gradient(to left , $a, $b)
+    background:-o-linear-gradient(to left , $a, $b)
+    background: -webkit-gradient(linear,left top,right top,from($a),to($b))
+  }
+
   .public-nav
     width 260px !important
     height 100%
@@ -88,10 +95,8 @@ export default {
       line-height 100px
       font-size 18px
       font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-      background -webkit-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background -moz-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background -o-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background linear-gradient(to bottom,#3D7EFC 0,#0A5EFF 100%);
+      gradient(#0A5EFF,#3D7EFC)
+      text-align center
     ul
       margin-top 17px
       .on

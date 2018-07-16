@@ -109,6 +109,7 @@ export default {
       font-size 16px
       border 1px solid #F0F0F0
       box-sizing border-box
+      text-align center
       &:hover
         box-shadow 0 0 16px  red
     .HomePageContent

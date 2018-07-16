@@ -161,6 +161,15 @@ export default {
 }
 </script>
 <style lang="stylus" >
+$white = #ffffff
+$blue = #3679FC
+gradient($a,$b) { //渐变
+    background: linear-gradient(to left, $a, $b)
+    background:-moz-linear-gradient(to left , $a, $b)
+    background:-o-linear-gradient(to left , $a, $b)
+    background: -webkit-gradient(linear,left top,right top,from($a),to($b))
+}
+
 .LoginWrap
   width 100%
   height 100%
@@ -211,7 +220,7 @@ export default {
       label
         cursor pointer
         font-size 20px
-        color #ffffff
+        color $white
     .Login
       width 100%
       margin 0 auto
@@ -233,7 +242,7 @@ export default {
         margin-right 92px
         background transparent
         border-radius 6px
-        color #ffffff
+        color $white
   .SelectWrap
     position absolute
     right 13%
@@ -248,11 +257,11 @@ export default {
       position relative
       span
         font-size 20px
-        color #ffffff
+        color $white
         margin-left 15px
       .iconfont
         font-size 20px
-        color #ffffff
+        color $white
         position absolute
         right 10px
     .OptionWrap
@@ -268,11 +277,11 @@ export default {
         text-align center
         span
           font-size 20px
-          color #ffffff
+          color $white
       .Opation
         background #020879
       .on
-        background #3679FC
+        background $blue
 
 .CreateWrap
   width 100%
@@ -288,7 +297,7 @@ export default {
     position absolute
     left 50%
     top 50%
-    background #ffffff
+    background $white
     border-radius 8px
     overflow hidden
     .CreateHeader
@@ -296,13 +305,10 @@ export default {
       height 66px
       line-height 66px
       text-align center
-      background -webkit-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background -moz-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background -o-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background linear-gradient(to bottom,#3D7EFC 0,#0A5EFF 100%)
+      gradient(#0A5EFF,#3D7EFC)
       span
         font-size 24px
-        color #ffffff
+        color $white
     .CreateMain
       width 100%
       height 550px
@@ -345,7 +351,7 @@ export default {
           font-size 18px
         span
           font-size 18px
-          color #3679FC
+          color $blue
 
       .NextStep
         margin-top 46px
@@ -365,10 +371,10 @@ export default {
           margin-right 80px
           background transparent
           border-radius 6px
-          color #3679FC
+          color $blue
   .DeclarationWrap
     width 491px
-    background #ffffff
+    background $white
     border-radius 10px
     margin-left -245px
     position absolute
@@ -382,7 +388,7 @@ export default {
       color #333333
       text-align center
       margin-top 59px
-      background #ffffff
+      background $white
       font-family PingFang-SC-Heavy
     .DeclarationContent
       margin-top 38px
@@ -401,7 +407,7 @@ export default {
     height 469px
     border-radius 8px
     box-shadow 7px 0px 18px rgba(6,8,65,0.26);
-    background #ffffff
+    background $white
     margin-top -234px
     margin-left -343px
     position absolute
@@ -413,13 +419,10 @@ export default {
       height 66px
       line-height 66px
       text-align center
-      background -webkit-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background -moz-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background -o-linear-gradient(top,#3D7EFC 0,#0A5EFF 100%)
-      background linear-gradient(to bottom,#3D7EFC 0,#0A5EFF 100%);
+      gradient(#0A5EFF,#3D7EFC)
       span
         font-size 24px
-        color #ffffff
+        color $white
     .ConfirmMain
       width 100%
       height 550px
@@ -458,5 +461,5 @@ export default {
           margin-right 80px
           background transparent
           border-radius 6px
-          color #3679FC
+          color $blue
 </style>
