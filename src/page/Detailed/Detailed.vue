@@ -27,6 +27,7 @@ export default {
     /*font-weight bold*/
     height 100%
     width 100%
+    position relative
     .el-container
       height 100%
       .main-container

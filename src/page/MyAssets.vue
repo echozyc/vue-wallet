@@ -66,7 +66,7 @@
               <p class="notice">
                 备注：固定合约需要申请成发行商才能有发行token的资格。注意填写后不能修改。
               </p>
-              <a href="javascript:;" class="btn" style="margin-left: 196px" @click="open2">提交</a>
+              <a href="javascript:;" class="btn" style="margin-left: 196px" @click="isshowRegisteredPopup = !isshowRegisteredPopup">提交</a>
             </div>
           </div>
 
@@ -132,6 +132,23 @@
           </div>
         </div>
       </div>
+
+      <!--注册发行商弹出层-->
+      <div class="RegisteredPopup" v-show="isshowRegisteredPopup">
+         <div class="RegisteredPopupContent">
+           <p class="Text">
+                 <span  style="font-weight: bold">提醒:</span>
+                 <span>申请成为发行商需要支付**个AEC。</span>
+               </p>
+           <div class="RegisteredPopupButton">
+             <button class="Cancel" @click="isshowRegisteredPopup = !isshowRegisteredPopup">取消</button>
+             <button class="Sure">确定</button>
+           </div>
+           <div class="RegisteredPopupClose" @click="isshowRegisteredPopup = !isshowRegisteredPopup">
+             <img src="../assets/common/img/icon_guanbi@2x.png" alt="">
+           </div>
+         </div>
+      </div>
     </div>
 </template>
 
@@ -169,25 +186,13 @@ export default {
       // isShowRegisteredIssue: false,
       // isShowIssueAssets:false,
       // isShowMeIssueAssets:false
+      isshowRegisteredPopup: false
     }
   },
   methods:{
     show(i){
       this.active = i
     },
-    open2() {
-      this.$confirm('申请成为发行商需要**个AEC', {
-        confirmButtonText: '确定提交',
-        cancelButtonText: '取消',
-        center: true
-      }).then(() => {
-        this.$message({
-        });
-      }).catch(() => {
-        this.$message({
-        });
-      });
-    }
   }
 }
 </script>
@@ -332,7 +337,57 @@ export default {
            .title
              width 135px
 
-  .el-message-box--center
-    .el-message-box__header
-      display none  !important
+  .RegisteredPopup
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background:rgba(0,0,0,0.5);
+    .RegisteredPopupContent
+      width 646px
+      height 324px
+      position absolute
+      top 50%
+      left 50%
+      margin-top -162px
+      margin-left -323px
+      background #ffffff
+      box-shadow 7px 0px 18px rgba(6,8,65,0.26)
+      border-radius 8px
+      .Text
+        margin-top 121px
+        text-align center
+        font-size 20px
+        color #333333
+        font-family:PingFang-SC-Heavy
+      .RegisteredPopupButton
+        margin-top 70px
+        button
+          width 137px
+          height 48px
+          border-radius 4px
+          font-size:20px;
+          font-family:PingFang-SC-Regular;
+          cursor pointer
+        .Cancel
+          border 1px solid #0057FF
+          color #0057FF
+          float left
+          margin-left 130px
+        .Sure
+          gradient(#0A5EFF,#3D7EFC)
+          color #FFFFFF
+          float right
+          margin-right 130px
+
+
+      .RegisteredPopupClose
+        width 20px
+        height 20px
+        position absolute
+        top 24px
+        right 24px
+        cursor pointer
+
 </style>
