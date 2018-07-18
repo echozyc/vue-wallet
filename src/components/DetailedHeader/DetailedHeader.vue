@@ -7,8 +7,8 @@
       <img src="../../assets/common/img/touxiang_small@2x.png" alt="">
     </div>
     <div class="Input">
-      <img src="../../assets/common/img/sousuo.png" alt="">
       <input type="text" placeholder="请输入搜索内容">
+      <img src="../../assets/common/img/sousuo.png" alt="">
     </div>
   </div>
 </template>
@@ -57,7 +57,6 @@ export default {
           position absolute
           top 10px
           left 104px
-          z-index 3
           cursor pointer
         input
           width 370px

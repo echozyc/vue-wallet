@@ -30,8 +30,9 @@ export default {
     position relative
     .el-container
       height 100%
+      width 100%
       .main-container
         background #f2f6ff
         padding 0
-        min-width 1100px
+        min-width 1110px
 </style>

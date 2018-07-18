@@ -151,7 +151,7 @@ export default {
       background #ffffff
       padding-left 20px
       box-sizing border-box
-      min-width 975px
+      /*min-width 900px*/
       div
         float left
         height 48px
@@ -175,7 +175,7 @@ export default {
     .ContentWrap
       border-top 1px solid #F0F0F0
       >div
-        min-width 975px
+        /*min-width 900px*/
         .content
           background #fff
           width 100%

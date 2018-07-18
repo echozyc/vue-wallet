@@ -229,7 +229,7 @@ export default {
       background #ffffff
       padding-left 20px
       box-sizing border-box
-      min-width 975px
+      /*min-width 900px*/
       div
         float left
         height 48px
@@ -253,7 +253,7 @@ export default {
     .ContentWrap
       border-top 1px solid #F0F0F0
       >div
-        min-width 975px
+        /*min-width 900px*/
         .content
           background #fff
           width 100%
@@ -335,7 +335,7 @@ export default {
        .content
          .lists
            .title
-             width 135px
+             width 120px
 
   .RegisteredPopup
     position absolute
@@ -375,13 +375,12 @@ export default {
           color #0057FF
           float left
           margin-left 130px
+          background #ffffff
         .Sure
           gradient(#0A5EFF,#3D7EFC)
           color #FFFFFF
           float right
           margin-right 130px
-
-
       .RegisteredPopupClose
         width 20px
         height 20px

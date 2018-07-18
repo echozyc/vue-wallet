@@ -24,6 +24,7 @@ export default new Router({
     },
     {
       path: '/',
+      redirect: '/HomePage',
       component: Detailed,
       children: [
         {

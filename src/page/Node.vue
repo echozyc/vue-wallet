@@ -21,91 +21,28 @@
           <td>123456</td>
           <td>ACE</td>
           <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
         </tr>
         <tr class="HomePageContent">
           <td>123456</td>
           <td>ACE</td>
           <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
         </tr>
         <tr class="HomePageContent">
           <td>123456</td>
           <td>ACE</td>
           <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
-        </tr>
-        <tr class="HomePageContent">
-          <td>123456</td>
-          <td>ACE</td>
-          <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
-        </tr>
-        <tr class="HomePageContent">
-          <td>123456</td>
-          <td>ACE</td>
-          <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
-        </tr>
-        <tr class="HomePageContent">
-          <td>123456</td>
-          <td>ACE</td>
-          <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
-        </tr>
-        <tr class="HomePageContent">
-          <td>123456</td>
-          <td>ACE</td>
-          <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
-        </tr>
-        <tr class="HomePageContent">
-          <td>123456</td>
-          <td>ACE</td>
-          <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
-        </tr>
-        <tr class="HomePageContent">
-          <td>123456</td>
-          <td>ACE</td>
-          <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
-        </tr>
-        <tr class="HomePageContent">
-          <td>123456</td>
-          <td>ACE</td>
-          <td>stan</td>
-          <td>sendi</td>
-          <td>2017-02-09</td>
-          <td>5000</td>
         </tr>
       </table>
-      <el-pagination
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page.sync="currentPage3"
-        :page-size="5"
-        layout="prev, pager, next, jumper"
-        :total="1000">
-      </el-pagination>
+      <div class="PaginationWrap">
+       <el-pagination class="Pagination"
+         @size-change="handleSizeChange"
+         @current-change="handleCurrentChange"
+         :current-page.sync="currentPage3"
+         :page-size="5"
+         layout="prev, pager, next, jumper"
+         :total="1000">
+       </el-pagination>
+      </div>
     </div>
   </div>
 </template>
@@ -131,10 +68,7 @@ export default {
         text2:'版本',
         text3:'操作系统'
       },
-      currentPage1: 5,
-      currentPage2: 5,
       currentPage3: 5,
-      currentPage4: 4
     }
   },
   methods: {
@@ -162,7 +96,7 @@ export default {
         background #ffffff
         padding-left 20px
         box-sizing border-box
-        min-width 975px
+        /*min-width 975px*/
         div
           float left
           height 48px
@@ -183,6 +117,31 @@ export default {
           background linear-gradient(to bottom,#3D7EFC 0,#0A5EFF 100%)
           span
             color #ffffff
-
+      table
+        border-radius 5px
+        box-shadow 7px 0px 4px rgba(65,46,211,0.02)
+        overflow hidden
+        tr
+          height 60px
+          color #555555
+          cursor pointer
+          font-size 16px
+          border 1px solid #F0F0F0
+          box-sizing border-box
+          text-align center
+          &:hover
+            box-shadow 0 0 16px  red
+        .HomePageContent
+          background #ffffff
+          color #666666
+          &:hover
+            box-shadow 0 0 16px #EDEEEF inset
+      .PaginationWrap
+        width 100%
+        height 100px
+        background #ffffff
+        overflow: hidden
+        .Pagination
+          margin 40px 0 0 56px
 
 </style>

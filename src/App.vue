@@ -14,6 +14,6 @@ export default {
   @import 'assets/common/css/base.css'
   @import 'assets/iconfont/iconfont.css'
   #app
-    min-height 766px
-    min-width 1200px
+    min-height 800px
+    min-width 1360px
 </style>

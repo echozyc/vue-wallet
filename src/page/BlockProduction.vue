@@ -11,7 +11,7 @@
             <span>
               受托人基本信息
             </span>
-           <div class="Register">
+           <div class="Register" @click="isShowRegisterPopup = !isShowRegisterPopup">
              <span>注册受托人</span>
            </div>
            <div class="Unopened">
@@ -65,7 +65,66 @@
           </div>
         </div>
         <!--table表格 组件-->
-        <DetailedTable :tableTitle="tableTitle"></DetailedTable>
+        <table border="0" width="100%" cellpadding="0">
+          <tr>
+            <td>高度</td>
+            <td>日期</td>
+            <td>ID</td>
+            <td>交易</td>
+            <td>总金额</td>
+            <td>总费用</td>
+            <td>奖励</td>
+          </tr>
+          <tr class="HomePageContent">
+            <td><span>123456</span></td>
+            <td>ACE</td>
+            <td><span>stan</span></td>
+            <td>sendi</td>
+            <td><span>2017</span></td>
+            <td>5000</td>
+            <td>0.0</td>
+          </tr>
+          <tr class="HomePageContent">
+            <td><span>123456</span></td>
+            <td>ACE</td>
+            <td><span>stan</span></td>
+            <td>sendi</td>
+            <td><span>2017</span></td>
+            <td>5000</td>
+            <td>0.0</td>
+          </tr>
+          <tr class="HomePageContent">
+            <td><span>123456</span></td>
+            <td>ACE</td>
+            <td><span>stan</span></td>
+            <td>sendi</td>
+            <td><span>2017</span></td>
+            <td>5000</td>
+            <td>0.0</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!--注册为受托人弹出层-->
+    <div class="RegisterPopup" v-show="isShowRegisterPopup">
+      <div class="RegisterPopupContent">
+        <p class="Text">
+          <span>注册为受托人</span>
+        </p>
+        <div class="RegisterInputWrap">
+           <span>受托人名称</span>
+           <input type="text" placeholder="最少2位和最多8位的数字和字母组合">
+        </div>
+        <p class="RegisterNotice">
+          备注：注册成为受托人需支付100AEC
+        </p>
+        <div class="RegisterPopupButton">
+          <button class="Cancel" @click="isShowRegisterPopup = !isShowRegisterPopup">取消</button>
+          <button class="Sure">注册</button>
+        </div>
+        <div class="RegisterPopupClose" @click="isShowRegisterPopup = !isShowRegisterPopup">
+          <img src="../assets/common/img/icon_guanbi@2x.png" alt="">
+        </div>
       </div>
     </div>
   </div>
@@ -86,17 +145,7 @@ export default {
       title: {
         text1: '区块生产'
       },
-      // DetailedTable 组件传值（传递名称）
-      tableTitle: {
-        //最多7个，最少6个，最后一个没有即为空
-        text1:'高度',
-        text2:'日期',
-        text3:'ID',
-        text4:'交易',
-        text5:'总金额',
-        text6:'总费用',
-        text7:'奖励'
-      },
+      isShowRegisterPopup:false
     }
   }
 }
@@ -209,7 +258,7 @@ export default {
           background #ffffff
           padding-left 20px
           box-sizing border-box
-          min-width 975px
+          /*min-width 975px*/
           div
             float left
             height 48px
@@ -227,4 +276,102 @@ export default {
             gradient(#0A5EFF,#3D7EFC)
             span
               color #ffffff
+        table
+            border-radius 5px
+            box-shadow 7px 0px 4px rgba(65,46,211,0.02)
+            overflow hidden
+            tr
+              height 60px
+              color #555555
+              cursor pointer
+              font-size 16px
+              border 1px solid #F0F0F0
+              box-sizing border-box
+              text-align center
+              &:hover
+                box-shadow 0 0 16px
+            .HomePageContent
+              background #ffffff
+              color #666666
+              border-left 5px solid #ffffff
+              &:hover
+                box-shadow 0 0 16px #EDEEEF inset
+                border-left 5px solid #FF6E4B
+              span
+                color #3679FC
+    .RegisterPopup
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      background:rgba(0,0,0,0.5);
+      .RegisterPopupContent
+        width 803px
+        height 406px
+        position absolute
+        top 50%
+        left 50%
+        margin-top -203px
+        margin-left -402px
+        background #ffffff
+        box-shadow 7px 0px 18px rgba(6,8,65,0.26)
+        border-radius 8px
+        padding 0 60px
+        box-sizing border-box
+        .Text
+          margin-top 56px
+          text-align center
+          font-size 36px
+          color #333333
+          font-family:PingFang-SC-Bold
+        .RegisterInputWrap
+          width 100%
+          height 60px
+          margin-top 55px
+          span
+            font-size 18px
+            color #333333
+          input
+            width 580px
+            height 60px
+            border-radius:5px
+            background #FAFAFA
+            border 1px solid #EBEBEB
+            font-size 18px
+            padding-left 32px
+            box-sizing border-box
+            margin-left 9px
+        .RegisterPopupButton
+          margin-top 70px
+          button
+            width 137px
+            height 48px
+            border-radius 4px
+            font-size:20px;
+            font-family:PingFang-SC-Regular;
+            cursor pointer
+          .Cancel
+            border 1px solid #0057FF
+            color #0057FF
+            float left
+            margin-left 148px
+            background #ffffff
+          .Sure
+            gradient(#0A5EFF,#3D7EFC)
+            color #FFFFFF
+            float right
+            margin-right 148px
+        .RegisterNotice
+          margin-top 15px
+          color #3679FC
+          font-size 16px
+          padding-left 107px
+        .RegisterPopupClose
+          width 20px
+          height 20px
+          position absolute
+          top 24px
+          right 24px
+          cursor pointer
 </style>

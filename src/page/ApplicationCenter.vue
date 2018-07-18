@@ -18,15 +18,136 @@
         <!--应用列表-->
         <div class="ApplicationList" v-show="active == 'isShowApplicationList'">
           <!--table表格 组件-->
-          <DetailedTable :tableTitle="tableTitle"></DetailedTable>
+          <table border="0" width="100%" cellpadding="20" class="TableFir">
+            <tr>
+              <td>图标</td>
+              <td>名称</td>
+              <td>描述</td>
+              <td>ID</td>
+              <td>类型</td>
+              <td>余额详情</td>
+              <td>源码</td>
+            </tr>
+            <tr class="HomePageContent">
+              <td>123456</td>
+              <td>ACE</td>
+              <td>stan</td>
+              <td>sendi</td>
+              <td>通用</td>
+              <td @click="isShowBalancePopup = !isShowBalancePopup">
+                <span>详情</span>
+              </td>
+              <td>
+                <span>点击下载</span>
+              </td>
+            </tr>
+            <tr class="HomePageContent">
+              <td>123456</td>
+              <td>ACE</td>
+              <td>stan</td>
+              <td>sendi</td>
+              <td>通用</td>
+              <td @click="isShowBalancePopup = !isShowBalancePopup">
+                <span>详情</span>
+              </td>
+              <td>
+                <span>点击下载</span>
+              </td>
+            </tr>
+            <tr class="HomePageContent">
+              <td>123456</td>
+              <td>ACE</td>
+              <td>stan</td>
+              <td>sendi</td>
+              <td>通用</td>
+              <td @click="isShowBalancePopup = !isShowBalancePopup">
+                <span>详情</span>
+              </td>
+              <td>
+                <span>点击下载</span>
+              </td>
+            </tr>
+          </table>
         </div>
         <!--已安装列表-->
         <div class="AlreadyInstalled" v-show="active == 'isShowAlreadyInstalled'">
           <!--table表格 组件-->
-          <DetailedTable :tableTitle="tableTitle"></DetailedTable>
+          <table border="0" width="100%" cellpadding="20" class="TableFir">
+            <tr>
+              <td>图标</td>
+              <td>名称</td>
+              <td>描述</td>
+              <td>ID</td>
+              <td>类型</td>
+              <td>余额详情</td>
+              <td>源码</td>
+            </tr>
+            <tr class="HomePageContent">
+              <td>123456</td>
+              <td>ACE</td>
+              <td>stan</td>
+              <td>sendi</td>
+              <td>通用</td>
+              <td @click="isShowBalancePopup = !isShowBalancePopup">
+                <span>详情</span>
+              </td>
+              <td>
+                <span>点击下载</span>
+              </td>
+            </tr>
+            <tr class="HomePageContent">
+              <td>123456</td>
+              <td>ACE</td>
+              <td>stan</td>
+              <td>sendi</td>
+              <td>通用</td>
+              <td @click="isShowBalancePopup = !isShowBalancePopup">
+                <span>详情</span>
+              </td>
+              <td>
+                <span>点击下载</span>
+              </td>
+            </tr>
+            <tr class="HomePageContent">
+              <td>123456</td>
+              <td>ACE</td>
+              <td>stan</td>
+              <td>sendi</td>
+              <td>通用</td>
+              <td @click="isShowBalancePopup = !isShowBalancePopup">
+                <span>详情</span>
+              </td>
+              <td>
+                <span>点击下载</span>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
 
+    </div>
+    <!--余额详情弹出层-->
+    <div class="BalancePopup" v-show="isShowBalancePopup">
+      <div class="BalancePopupContent">
+        <p class="Text">
+          <span>余额详情</span>
+        </p>
+        <table border="0" width="100%" cellpadding="20" id="TableSec">
+          <tr style="font-size: 18px;color: #333333">
+            <td>支持币种</td>
+            <td>当前流通量</td>
+            <td>DAPP余额</td>
+          </tr>
+          <tr class="HomePageContent" style="font-size: 16px;color: #666666">
+            <td>AEC</td>
+            <td>19000000</td>
+            <td>109234.3443</td>
+          </tr>
+        </table>
+        <div class="BalancePopupClose" @click="isShowBalancePopup = !isShowBalancePopup">
+          <img src="../assets/common/img/icon_guanbi@2x.png" alt="">
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,25 +169,15 @@ export default {
         text1: '应用中心',
         text2: '/ 应用列表'
       },
-      // DetailedTable 组件传值（传递名称）
-      tableTitle: {
-        //最多7个，最少6个，最后一个没有即为空
-        text1:'图标',
-        text2:'名称',
-        text3:'描述',
-        text4:'ID',
-        text5:'类型',
-        text6:'余额详情',
-        text7:'源码'
-      },
       //nav 切换
       active: 'isShowApplicationList',
+      isShowBalancePopup: false
     }
   },
   methods:{
     show(i){
       this.active = i
-    }
+    },
   }
 }
 </script>
@@ -91,7 +202,7 @@ export default {
         background #ffffff
         padding-left 20px
         box-sizing border-box
-        min-width 975px
+        /*min-width 975px*/
         div
           float left
           height 48px
@@ -109,5 +220,79 @@ export default {
           gradient(#0A5EFF,#3D7EFC)
           span
             color #ffffff
+
+      .ContentWrap
+        .TableFir
+          border-radius 5px
+          box-shadow 7px 0px 4px rgba(65,46,211,0.02)
+          overflow hidden
+          tr
+            height 60px
+            color #555555
+            cursor pointer
+            font-size 16px
+            border 1px solid #F0F0F0
+            box-sizing border-box
+            text-align center
+            &:hover
+              box-shadow 0 0 16px  red
+          .HomePageContent
+            background #ffffff
+            color #666666
+            border-left 5px solid #ffffff
+            &:hover
+              box-shadow 0 0 16px #EDEEEF inset
+              border-left 5px solid #FF6E4B
+            span
+              color #3679FC
+    .BalancePopup
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      background:rgba(0,0,0,0.5);
+      .BalancePopupContent
+        width 788px
+        height 342px
+        position absolute
+        top 50%
+        left 50%
+        margin-top -171px
+        margin-left -394px
+        background #ffffff
+        box-shadow 7px 0px 18px rgba(6,8,65,0.26)
+        border-radius 8px
+        padding 0 55px
+        box-sizing border-box
+        .Text
+          margin-top 56px
+          text-align center
+          font-size 36px
+          color #333333
+          font-family:PingFang-SC-Bold
+        #TableSec
+          border-radius 5px
+          overflow hidden
+          margin-top 64px
+          tr
+            height 60px
+            color #555555
+            cursor pointer
+            font-size 16px
+            border-bottom  1px solid #F0F0F0
+            box-sizing border-box
+            text-align center
+          .HomePageContent
+            background #ffffff
+            color #666666
+        .BalancePopupClose
+          width 20px
+          height 20px
+          position absolute
+          top 24px
+          right 24px
+          cursor pointer
+
 
 </style>
