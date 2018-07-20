@@ -7,10 +7,10 @@
       <!--导航 nav-->
       <div class="MyAssetsContentNav">
         <div class="zichangaiyao"  @click="show('isShowAccountInformation')" :class="{on:active == 'isShowAccountInformation'}">
-          <span>账户信息</span>
+          <span>{{$t('ZHXX')}}</span>
         </div>
         <div class="zhucefaxing"  @click="show('isShowSecondPassword')" :class="{on:active == 'isShowSecondPassword'}">
-          <span>二级密码</span>
+          <span>{{$t('EJMM')}}</span>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
           <div class="middle">
             <!--总余额-->
             <div class="balance">
-              <p class="balanceTitle publicTitle">总余额</p>
+              <p class="balanceTitle publicTitle">{{$t('ZYE')}}</p>
               <p class="balanceContent">
                 <span class="number">12600</span>
                 <span class="unit">PEB</span>
@@ -36,8 +36,8 @@
             </div>
             <!--二级密码-->
             <div class="passward">
-               <p class="passwardTitle publicTitle">二级密码</p>
-               <p class="passwardContent">未设置</p>
+               <p class="passwardTitle publicTitle">{{$t('EJMM')}}</p>
+               <p class="passwardContent">{{$t('WSZ')}}</p>
             </div>
           </div>
 
@@ -45,7 +45,7 @@
             <!--地址-->
             <div class="address">
               <div class="addressC">
-                <p class="addressTitle">地址</p>
+                <p class="addressTitle">{{$t('DZ')}}</p>
                 <p class="addressContent">
                   7d7b5345b45a399df54dd2cd375f3de661c567a894cc292bc9bf894c
                 </p>
@@ -57,7 +57,7 @@
             </div>
             <!--公钥-->
             <div class="publicKey">
-              <p class="publicKeyTitle publicTitle">公钥</p>
+              <p class="publicKeyTitle publicTitle">{{$t('GY')}}</p>
               <p class="publicKeyContent">
                 7d7b5345b45a399df54dd2cd375f3de661c567a894cc292bc9bf894cc292bc9bf8c567a894cc292bc9bf894cc292bc9bf894cc292bc9bf431a445594cc292bc9bf431a44555681894cc292bc9bf
               </p>
@@ -71,21 +71,21 @@
             <ul class="lists">
               <li class="list">
                     <span class="title">
-                        输入密码
+                        {{$t('SRMM')}}
                     </span>
                 <input class="text" type="text" placeholder="输入8至16位数字和字母组合">
               </li>
               <li class="list">
                     <span class="title">
-                        确认密码
+                        {{$t('QRMM')}}
                     </span>
                 <input class="text" type="text" placeholder="再次输入">
               </li>
             </ul>
             <p class="notice">
-              备注：请确定您已经安全保存了二级密码，一旦丢失，您在AE Cloud系统中的财产将无法找回
+              {{$t('BZQQD')}}
             </p>
-            <a href="javascript:;" class="btn" style="margin-left: 172px">提交</a>
+            <a href="javascript:;" class="btn" style="margin-left: 172px">{{$t('TJ')}}</a>
           </div>
         </div>
       </div>
@@ -290,6 +290,7 @@ export default {
                 color $text-color
                 font-size $font-size
                 text-align right
+                width 80px
               .text
                 display inline-block
                 margin-left 30px

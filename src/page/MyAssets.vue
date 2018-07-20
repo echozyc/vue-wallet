@@ -7,16 +7,16 @@
         <!--导航 nav-->
         <div class="MyAssetsContentNav">
           <div class="zichangaiyao"  @click="show('isShowAssetSummary')" :class="{on:active == 'isShowAssetSummary'}">
-            <span>资产概要</span>
+            <span>{{$t('ZCGY')}}</span>
           </div>
           <div class="zhucefaxing"  @click="show('isShowRegisteredIssue')" :class="{on:active == 'isShowRegisteredIssue'}">
-            <span>注册发行商</span>
+            <span>{{$t('ZCFXS')}}</span>
           </div>
           <div class="faxingzhanghu" @click="show('isShowIssueAssets')" :class="{on:active == 'isShowIssueAssets'}">
-            <span>发行资产</span>
+            <span>{{$t('FXZC')}}</span>
           </div>
           <div class="faxingzichan"  @click="show('isShowMeIssueAssets')" :class="{on:active == 'isShowMeIssueAssets'}">
-            <span>我发行的资产</span>
+            <span>{{$t('WFXDZC')}}</span>
           </div>
         </div>
 
@@ -34,39 +34,39 @@
               <ul class="lists">
                 <li class="list">
                     <span class="title">
-                        发行商名称*
+                        {{$t('FXSMC')}}*
                     </span>
                   <input class="text" type="text" >
                 </li>
                 <li class="list">
                     <span class="title">
-                        企业三证号
+                        {{$t('QYSZH')}}*
                     </span>
                   <input class="text" type="text" >
                 </li>
                 <li class="list">
                     <span class="title">
-                        地址*
+                        {{$t('DZ')}}*
                     </span>
                   <input class="text" type="text" >
                 </li>
                 <li class="list">
                     <span class="title">
-                        联系人*
+                        {{$t('LXR')}}*
                     </span>
                   <input class="text" type="text" >
                 </li>
                 <li class="list">
                     <span class="title">
-                        联系方式*
+                        {{$t('LXFS')}}*
                     </span>
                   <input class="text" type="text" >
                 </li>
               </ul>
               <p class="notice">
-                备注：固定合约需要申请成发行商才能有发行token的资格。注意填写后不能修改。
+                {{$t('BZGD')}}
               </p>
-              <a href="javascript:;" class="btn" style="margin-left: 196px" @click="isshowRegisteredPopup = !isshowRegisteredPopup">提交</a>
+              <a href="javascript:;" class="btn" style="margin-left: 196px" @click="isShowRegisteredPopup = !isShowRegisteredPopup">{{$t('提交')}}</a>
             </div>
           </div>
 
@@ -74,54 +74,68 @@
           <div class="IssueAssets" v-show="active == 'isShowIssueAssets'">
             <div class="content">
               <ul class="lists" style="padding-top: 121px">
-                <span class="listsTitle"><div class="point"></div>发行代币信息</span>
+                <span class="listsTitle"><div class="point"></div>{{$t('FXDBXX')}}</span>
                 <li class="list" >
                    <span class="title">
-                       资产名称
+                       {{$t('ZCMC')}}
                    </span>
-                  <input class="text" type="text" placeholder="英文名称">
+                  <input class="text" type="text" :placeholder="$t('YWMC')">
                 </li>
                 <li class="list">
                     <span class="title">
-                        代币标识
+                        {{$t('DBBS')}}
                     </span>
-                  <input class="text" type="text" placeholder="英文名称">
+                  <input class="text" type="text" :placeholder="$t('YWMC')">
                 </li>
                 <li class="list">
                     <span class="title">
-                        小数/位数精确度
+                        {{$t('XSWSJQD')}}
                     </span>
-                  <input class="text" type="text" placeholder="请输入2-6位整数">
+                  <input class="text" type="text" :placeholder="$t('QSRZZS')">
                 </li>
                 <li class="list">
                     <span class="title">
-                        发行量
+                        {{$t('FXL')}}
                     </span>
-                  <input class="text" type="text" placeholder="不超过12位正整数">
+                  <input class="text" type="text" :placeholder="$t('BCGZZS')">
                 </li>
                 <li class="list">
                     <span class="title" style="float: left; margin-top: 82px" >
-                        代币资产描述
+                        {{$t('DBZCMS')}}
                     </span>
-                  <textarea class="text" type="text" placeholder="不超过500个字符" style="height: 178px;outline: none;padding-top: 22px"></textarea>
-                </li>
-                <li class="list" style="width:760px; height: 60px">
-
+                  <textarea class="text" type="text" :placeholder="$t('BCGZF')" style="height: 178px;outline: none;padding-top: 22px"></textarea>
                 </li>
                 <li class="list">
+                  <span class="title"></span>
+                  <div class="text Frozen">
+                       <span>{{$t('SFXYDJBFFXZC')}}</span>
+                       <!--<div class="Select">-->
+                          <!--<span v-model="need">{{need}}</span>-->
+                       <!--</div>-->
+                       <el-select v-model="value" class="Select" @change="ShowFrozin()">
+                         <el-option
+                           v-for="item in options"
+                           :key="item.value"
+                           :label="item.label"
+                           :value="item.value">
+                         </el-option>
+                       </el-select>
+                  </div>
+                </li>
+                <li class="list" v-show="isShowFrozin">
                     <span class="title">
-                        冻结数
+                        {{$t('DJS')}}
                     </span>
                   <input class="text" type="text" >
                 </li>
-                <li class="list">
+                <li class="list" v-show="isShowFrozin">
                     <span class="title">
-                        冻结释放时间
+                        {{$t('DJSFSJ')}}
                     </span>
                   <input class="text" type="text" placeholder="格式：2018-07-08 12:23:30">
                 </li>
               </ul>
-              <a href="javascript:;" class="btn" style="margin-left: 241px">提交</a>
+              <a href="javascript:;" class="btn" style="margin-left: 241px">{{$t('TJ')}}</a>
             </div>
           </div>
 
@@ -134,17 +148,17 @@
       </div>
 
       <!--注册发行商弹出层-->
-      <div class="RegisteredPopup" v-show="isshowRegisteredPopup">
+      <div class="RegisteredPopup" v-show="isShowRegisteredPopup">
          <div class="RegisteredPopupContent">
            <p class="Text">
-                 <span  style="font-weight: bold">提醒:</span>
-                 <span>申请成为发行商需要支付**个AEC。</span>
+                 <span  style="font-weight: bold">{{$t('TX')}}:</span>
+                 <span>{{$t('SQCW')}}</span>
                </p>
            <div class="RegisteredPopupButton">
-             <button class="Cancel" @click="isshowRegisteredPopup = !isshowRegisteredPopup">取消</button>
-             <button class="Sure">确定</button>
+             <button class="Cancel" @click="isShowRegisteredPopup = !isShowRegisteredPopup">{{$t('QX')}}</button>
+             <button class="Sure">{{$t('QD')}}</button>
            </div>
-           <div class="RegisteredPopupClose" @click="isshowRegisteredPopup = !isshowRegisteredPopup">
+           <div class="RegisteredPopupClose" @click="isShowRegisteredPopup = !isShowRegisteredPopup">
              <img src="../assets/common/img/icon_guanbi@2x.png" alt="">
            </div>
          </div>
@@ -167,32 +181,53 @@ export default {
     return {
       //DetailedHeader 样式组件传值
       title: {
-        text1: '我的资产',
-        text2: '/ 资产概要'
+        text1: this.$t('WDZC'),
+        text2: '/ ' + this.$t('ZCGY')
       },
+      need: this.$t('XY'),
+      //Select 切换
+      options: [{
+        value: '0',
+        label: this.$t('XY')
+      }, {
+        value: '1',
+        label: this.$t('BXY')
+      }],
+      value:'0',
       // DetailedTable 组件传值（传递名称）
       tableTitle: {
         //最多7个，最少6个，最后一个没有即为空
-        text1:'资产币种',
-        text2:'资产名称',
-        text3:'余额',
-        text4:'精度',
-        text5:'发行总量',
-        text6:'操作',
+        text1: this.$t('ZCBZ'),
+        text2: this.$t('ZCMC'),
+        text3: this.$t('YE'),
+        text4: this.$t('JD'),
+        text5: this.$t('FXZL'),
+        text6: this.$t('CZ'),
       },
       //nav 切换
       active: 'isShowAssetSummary',
-      // isShowAssetSummary: true,
-      // isShowRegisteredIssue: false,
-      // isShowIssueAssets:false,
-      // isShowMeIssueAssets:false
-      isshowRegisteredPopup: false
+      // 弹出层
+      isShowRegisteredPopup: false,
+      //冻结资产 是否显示
+      isShowFrozin:true
     }
   },
+  computed:{
+
+  },
   methods:{
+    //nav 切换
     show(i){
       this.active = i
     },
+    // select 冻结li isShow
+    ShowFrozin(){
+      if(this.value == 0){
+        this.isShowFrozin = true
+      } else if(this.value == 1){
+        this.isShowFrozin = false
+      }
+    }
   }
 }
 </script>
@@ -311,6 +346,24 @@ export default {
                   color #B7B8B8
                 &:-ms-input-placeholder /* Internet Explorer 10+ */
                   color #B7B8B8
+              .Frozen
+                width 706px
+                height 60px
+                line-height 60px
+                background #ffffff
+                padding 0
+                border none
+                >span
+                  width 200px
+                  line-height 18px
+                  display inline-block
+                .Select
+                  float right
+                  right 0
+                .el-input__inner
+                  width 446px
+                  height 60px
+                  color #2480FF
           .notice
             margin-left 196px
             font-size $notice-size

@@ -7,7 +7,7 @@
       <img src="../../assets/common/img/touxiang_small@2x.png" alt="">
     </div>
     <div class="Input">
-      <input type="text" placeholder="请输入搜索内容">
+      <input type="text" :placeholder="$t('QSRSSNR')">
       <img src="../../assets/common/img/sousuo.png" alt="">
     </div>
   </div>

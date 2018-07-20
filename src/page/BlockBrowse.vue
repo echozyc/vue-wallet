@@ -298,6 +298,14 @@ export default {
       //生产者
       isShowProducer: false
     }
+  },
+  methods:{
+    handleSizeChange(){
+
+    },
+    handleCurrentChange(){
+
+    }
   }
 }
 </script>

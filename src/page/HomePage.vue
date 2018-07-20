@@ -7,17 +7,17 @@
         <!--Details 细节内容-->
         <div class="HomePageDetails">
           <div class="HomePageBalance HomePageD">
-            <p class="HomePageDTitle">余额</p>
+            <p class="HomePageDTitle">{{$t('YE')}}</p>
             <p class="HomePageDNumber">12600</p>
             <p class="HomePageDText">ACE</p>
           </div>
           <div class="HomePageHeight HomePageD">
-            <p class="HomePageDTitle">最后区块高度</p>
+            <p class="HomePageDTitle">{{$t('ZHQKGD')}}</p>
             <p class="HomePageDNumber">22600</p>
             <p class="HomePageDText">2018/05/24 17:39:50</p>
           </div>
           <div class="HomePageEdition HomePageD">
-            <p class="HomePageDTitle">版本信息</p>
+            <p class="HomePageDTitle">{{$t('BBXX')}}</p>
             <p class="HomePageDNumber">1.0.1</p>
             <p class="HomePageDText">2018/05/24 17:39:50</p>
           </div>
@@ -25,7 +25,7 @@
         <!--Transaction 交易内容-->
         <div class="HomePageTransaction">
           <div class="MeTransaction">
-            <span>我的交易</span>
+            <span>{{$t('WDJY')}}</span>
           </div>
           <!--table表格 组件-->
           <DetailedTable :tableTitle="tableTitle"></DetailedTable>
@@ -49,18 +49,18 @@ export default {
     return {
       //DetailedHeader 样式组件传值
       title: {
-        text1:'首页'
+        text1:this.$t('SY')
       },
       // DetailedTable 组件传值（传递名称）
       tableTitle: {
         //最多7个，最少6个，最后一个没有即为空
-        text1:'ID',
-        text2:'类型',
-        text3:'发送者',
-        text4:'接受者',
-        text5:'日期',
-        text6:'金额(费用)',
-        text7:'',
+        text1:this.$t('ID'),
+        text2:this.$t('LX'),
+        text3:this.$t('FSZ'),
+        text4:this.$t('JSZ'),
+        text5:this.$t('RQ'),
+        text6:this.$t('JEFY'),
+        text7:this.$t(''),
       }
     }
   }

@@ -8,7 +8,14 @@
                    <span class="title">
                        资产币种
                    </span>
-                <input class="text" type="text" style="width: 321px">
+                  <el-select v-model="value" class="select">
+                    <el-option
+                      v-for="item in options"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+                    </el-option>
+                  </el-select>
               </li>
                 <li class="list">
                     <span class="title">
@@ -69,12 +76,21 @@ export default {
         text1: '转账',
         text2: ''
       },
+      //Select 切换
+      options: [{
+        value: '0',
+        label: '人民币'
+      }, {
+        value: '1',
+        label: '美元'
+      }],
+      value:'0',
     }
   }
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
     $bg-color = #f2f6ff
     $bg-input = #FAFAFA
     $border-color = #EBEBEB
@@ -91,34 +107,33 @@ export default {
       background:-o-linear-gradient(to left , $a, $b)
       background: -webkit-gradient(linear,left top,right top,from($a),to($b))
     }
-    .TransferAccountsWrap {
+    .TransferAccountsWrap
         width 100%
         height 100%
         background $bg-color
-        .TransferAccountMain {
+        .TransferAccountMain
             width 100%
             /*height 100%*/
             padding 45px 85px 55px 72px
             background #F4F6F8
             box-sizing border-box
-            .content {
+            .content
                 background #fff
                 width 100%
                 /*height 100%*/
-                .lists {
+                .lists
                     padding-top 77px
-                    .list {
+                    .list
                         margin-left 74px
                         margin-bottom 30px
-                        .title {
+                        .title
                             display inline-block
                             color $text-color
                             font-size $font-size
                             line-height 60px
                             width 72px
                             text-align right
-                        }
-                        .text {
+                        .text
                             display inline-block
                             margin-left 30px
                             padding 0 30px
@@ -129,15 +144,23 @@ export default {
                             border-radius 5px
                             background $bg-input
                             border 1px solid $border-color
-                        }
-                    }
-                }
-                .notice {
+                        .select
+                            margin-left 30px
+                        .el-input__inner
+                            width 321px
+                            height 60px
+                            font-size $font-size
+                            line-height 60px
+                            border-radius 5px
+                            background #fafafa
+                            border: 1px solid #ebebeb
+                            &:focus
+                              border-color $border-color
+                .notice
                     margin-left: 180px;
                     font-size $notice-size
                     color $text-notice
-                }
-                .btn {
+                .btn
                     display inline-block
                     margin: 53px 0 103px 180px;
                     width: 704px
@@ -148,8 +171,4 @@ export default {
                     text-align center
                     border-radius 5px
                     gradient(#0A5EFF,#3D7EFC)
-                }
-            }
-        }
-    }
 </style>

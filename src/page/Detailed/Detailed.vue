@@ -19,12 +19,6 @@ export default {
 </script>
 <style lang="stylus">
   .ap
-    /*font-family 'Avenir', Helvetica, Arial, sans-serif*/
-    /*-webkit-font-smoothing antialiased*/
-    /*-moz-osx-font-smoothing grayscale*/
-    /*text-align center*/
-    /*color #ffffff*/
-    /*font-weight bold*/
     height 100%
     width 100%
     position relative
@@ -35,4 +29,7 @@ export default {
         background #f2f6ff
         padding 0
         min-width 1110px
+  .el-select-dropdown__item.selected
+    color #ffffff
+    background #2480FF
 </style>

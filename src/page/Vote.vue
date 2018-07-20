@@ -140,7 +140,9 @@
           <tr class="HomePageContent" style="font-size: 16px;color: #666666">
             <td>hijkk1234</td>
             <td>A4whbwURe53aUSGDk1tkTdt3YiwkbwU68t</td>
-            <td>hijkk1234</td>
+            <td>
+              <el-input-number v-model="num1"  :min="1"  label="描述文字"></el-input-number>
+            </td>
           </tr>
         </table>
         <p class="VoteNotice">
@@ -176,7 +178,11 @@ export default {
       },
       //nav 切换
       active: 'isShowTrusteesList',
-      isShowVotePopup: false
+      //弹出层
+      isShowVotePopup: false,
+      //弹出层计数器
+      num1: 1
+
     }
   },
   methods:{
@@ -187,7 +193,7 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus">
+<style lang="stylus">
   gradient($a,$b) { //渐变
     background: linear-gradient(to left, $a, $b)
     background:-moz-linear-gradient(to left , $a, $b)
@@ -297,6 +303,12 @@ export default {
           .HomePageContent
             background #ffffff
             color #666666
+            .el-input-number
+              width 90px
+              .el-input-number__decrease,.el-input-number__increase
+                width 26px
+              .el-input__inner
+                padding 0
         .VotePopupButton
           margin-top 70px
           button
